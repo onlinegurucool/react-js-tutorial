@@ -28,6 +28,7 @@ const TodoList = () => {
             status: false,
         },
     ]);
+
     const markDone = (index) => {
         let newState = [...todoList];
         newState[index].status = true;
@@ -39,7 +40,7 @@ const TodoList = () => {
                 return (
                     <li key={t.id} onClick={() => markDone(ti)}>
                         {" "}
-                        {t.todo} {t.status && <i class="fa fa-check"></i>}{" "}
+                        {t.todo} {t.status && <i className="fa fa-check"></i>}{" "}
                     </li>
                 );
             })}
