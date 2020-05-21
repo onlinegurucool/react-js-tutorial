@@ -32,9 +32,6 @@ const TodoList = () => {
 
     useEffect(() => {
         console.log(todoList);
-        return () => {
-            console.log("component hide")
-        }
     }, [todoList]);
 
     useEffect(() => {
