@@ -6,18 +6,15 @@ const Demo = () => {
     let [show, setShow] = useState(true);
 
     let toggle = () => setShow(!show);
+    let genRandom = () => setRandom(Math.round(Math.random() * 100));
 
     return (
         <>
-            <button
-                className="btn btn-primary mr-2"
-                onClick={() => setRandom(Math.round(Math.random() * 100))}
-            >
-                Change other state{" "}
-                <span className="badge badge-light">{random}</span>
+            <button className="btn btn-primary mr-2" onClick={genRandom}>
+                Change other state
+                <span className="badge badge-light ml-2">{random}</span>
             </button>
             <button className="btn btn-primary mr-2" onClick={toggle}>
-                {" "}
                 Show / Hide Life Cycle Demo
             </button>
             <div className="mt-2">
