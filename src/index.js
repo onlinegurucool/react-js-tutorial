@@ -6,7 +6,8 @@ ReactDOM.render(
     document.getElementById("root")
 );
 
-// // example without JSX
+
+// // without jsx
 // ReactDOM.render(
 //     React.createElement("div", null, ` Hello World`),
 //     document.getElementById("root")
