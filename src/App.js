@@ -1,14 +1,16 @@
 import React from "react";
 
-import Header from './components/Header';
+import Header from "./components/Header";
+
+
 
 const App = () => {
     // function to increment i
     var i = 0;
     let inc = () => {
-        i++
-        console.log({i})
-    }
+        i++;
+        console.log({ i });
+    };
 
     return (
         <>
@@ -17,7 +19,7 @@ const App = () => {
             </Header>
             <div>Hello World</div>
         </>
-    )
+    );
 };
 
 export default App;

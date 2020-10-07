@@ -1,15 +1,21 @@
 import React from "react";
 
+import './Header.css';
+
 const Header = (props) => {
-    // logging props
-    console.log(props);
-    // destructing props into variables
     let { title, children, increment } = props;
+    // let myStyle = {
+    //     backgroundColor: "red",
+    //     fontSize: "20px",
+    //     color: "Yellow",
+    // };˘
     return (
-        <header title={title}>
+        <header title={title} 
+            // style={myStyle}
+        >
             <br />
             {children}
-            <button onClick={() => increment()}>Increase count</button>
+            <button onClick={() => increment()} className="btn btn-primary">Increase count</button>
         </header>
     );
 };
