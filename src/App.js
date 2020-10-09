@@ -1,25 +1,25 @@
-import React from "react";
+import React, { Component } from "react";
+import CreateTodo from "./components/CreateTodo";
+import TodoList from "./components/TodoList";
 
-import Header from "./components/Header";
-
-
-
-const App = () => {
-    // function to increment i
-    var i = 0;
-    let inc = () => {
-        i++;
-        console.log({ i });
-    };
-
-    return (
-        <>
-            <Header title="I am Header" increment={inc}>
-                I am child of header
-            </Header>
-            <div>Hello World</div>
-        </>
-    );
-};
+class App extends Component {
+    render() {
+        return (
+            <div className="wrapper">
+                <div className="container my-3">
+                    <div className="card">
+                        <div className="card-header">
+                            <h3>Todo List</h3>
+                        </div>
+                        <div className="card-body">
+                            <TodoList />
+                            {/* <CreateTodo /> */}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
 
 export default App;

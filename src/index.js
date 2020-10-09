@@ -7,10 +7,3 @@ ReactDOM.render(
     <App /> ,
     document.getElementById("root")
 );
-
-
-// // without jsx
-// ReactDOM.render(
-//     React.createElement("div", null, ` Hello World`),
-//     document.getElementById("root")
-// );
