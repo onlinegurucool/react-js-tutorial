@@ -29,11 +29,12 @@ class TodoList extends Component {
             <>
                 <ul className="list-unstyled">
                     {list.map((listObj,index) => {
+                        let {todo,status} = listObj;
                         return (
                             <li key={index}>
-                                <input type="checkbox" id="checkbox" />
-                                <label className="ml-2" htmlFor="checkbox">
-                                    Sample Todo
+                                <input type="checkbox" checked={status ? "checked" : ""}  id="checkbox" />
+                                <label className={status ? "ml-2 completed" : "ml-2"} htmlFor="checkbox">
+                                    {todo}
                                 </label>
                             </li>
                         );
