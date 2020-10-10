@@ -27,9 +27,9 @@ class App extends Component {
                 <hr />
                 <ul>
                     {
-                        cars.map((c) => {
+                        cars.map((c,index) => {
                             return (
-                                <li>{c}</li>
+                                <li key={index}>{c}</li>
                             )
                         })
                     }
