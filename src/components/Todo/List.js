@@ -28,9 +28,9 @@ class TodoList extends Component {
         return (
             <>
                 <ul className="list-unstyled">
-                    {list.map(() => {
+                    {list.map((listObj,index) => {
                         return (
-                            <li>
+                            <li key={index}>
                                 <input type="checkbox" id="checkbox" />
                                 <label className="ml-2" htmlFor="checkbox">
                                     Sample Todo
@@ -38,13 +38,6 @@ class TodoList extends Component {
                             </li>
                         );
                     })}
-
-                    <li>
-                        <input type="checkbox" id="checkbox" />
-                        <label className="ml-2 completed" htmlFor="checkbox">
-                            Sample Todo
-                        </label>
-                    </li>
                 </ul>
                 <input
                     placeholder="Eg. Subscribe Online GuruCool"
