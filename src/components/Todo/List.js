@@ -13,27 +13,64 @@ class TodoList extends Component {
                 status: true,
             },
         ],
+        input: "",
     };
 
     addTodo = () => {
         // add into todo
+        this.setState({
+            ...this.state,
+            list: [
+                ...this.state.list,
+                {
+                    todo: this.state.input,
+                    status: false,
+                },
+            ],
+            input: "",
+        });
     };
 
-    markComplete = () => {
+    markComplete = (index) => {
         // mark todo complete
+        let temp = this.state.list;
+            temp[index].status = !temp[index].status;
+        this.setState({
+            ...this.state,
+            list: temp
+        })
     };
+
+    handelChange = (e) => {
+        this.setState({
+            ...this.state,
+            input: e.target.value,
+        });
+    };
+    
 
     render() {
-        let { list } = this.state;
+        let { list, input } = this.state;
         return (
             <>
+                {/* {JSON.stringify(this.state)} */}
                 <ul className="list-unstyled">
-                    {list.map((listObj,index) => {
-                        let {todo,status} = listObj;
+                    {list.map((listObj, index) => {
+                        let { todo, status } = listObj;
                         return (
                             <li key={index}>
-                                <input type="checkbox" checked={status ? "checked" : ""}  id="checkbox" />
-                                <label className={status ? "ml-2 completed" : "ml-2"} htmlFor="checkbox">
+                                <input
+                                    type="checkbox"
+                                    checked={status ? "checked" : ""}
+                                    id={`checkbox_${index}`}
+                                    onChange={() => this.markComplete(index)}
+                                />
+                                <label
+                                    className={
+                                        status ? "ml-2 completed" : "ml-2"
+                                    }
+                                    htmlFor={`checkbox_${index}`}
+                                >
                                     {todo}
                                 </label>
                             </li>
@@ -43,8 +80,13 @@ class TodoList extends Component {
                 <input
                     placeholder="Eg. Subscribe Online GuruCool"
                     className="form-control"
+                    onChange={(event) => this.handelChange(event)}
+                    value={input}
                 />
-                <button className="btn btn-primary btn-block mt-2">
+                <button
+                    className="btn btn-primary btn-block mt-2"
+                    onClick={this.addTodo}
+                >
                     Add Todo
                 </button>
             </>
