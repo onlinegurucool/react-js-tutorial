@@ -5,7 +5,7 @@ import HowerCount from "./Components/HoverCount";
 function App() {
   return (
     <div className="wrapper p-2">
-      <ClickedCounter />
+      <ClickedCounter name="Test" />
       <hr />
       <HowerCount />
     </div>
