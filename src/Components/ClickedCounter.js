@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
+import WrappedCoutner from "./WrappedCounter";
 
-const ClickedCounter = () => {
-  const [count, setCount] = useState(0);
-  const incrementCount = () => {
-    setCount(count + 1);
-  };
+const ClickedCounter = (props) => {
+  const { incrementCount, count } = props;
 
+  console.log({ logPropsCC: props });
   return <button onClick={incrementCount}>Clicked {count} time</button>;
 };
 
-export default ClickedCounter;
+export default WrappedCoutner(ClickedCounter, 5);

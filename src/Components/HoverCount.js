@@ -1,13 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import WrappedCoutner from "./WrappedCounter";
 
-const HowerCount = () => {
-  const [count, setCount] = useState(0);
-
-  const incrementCount = () => {
-    setCount(count + 1);
-  };
+const HowerCount = (props) => {
+  const { incrementCount, count } = props;
 
   return <h2 onMouseOver={incrementCount}>Hovered {count} time</h2>;
 };
 
-export default HowerCount;
+export default WrappedCoutner(HowerCount,10);
