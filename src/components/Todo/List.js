@@ -70,7 +70,7 @@ const TodoList = () => {
                                 {todo}
                             </label>
                         </li>
-                    );¯
+                    );
                 })}
             </ul>
             <input
